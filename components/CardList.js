@@ -10,11 +10,14 @@ export function renderCardList(categoryId, bookmarks, onSave) {
   const cardListContainer = document.querySelector('.card-list-container');
   const container = document.querySelector('.container');
   const categories = document.querySelector('.category-container');
+  const listContainer = document.querySelector('.lists-container');
+  const wrapper = document.querySelector('.wrapper')
+  listContainer.style.display ='none';
   cardListContainer.innerHTML = '';
  const cardListBackBtn = document.createElement('button');
  cardListBackBtn.classList.add('cards-back-btn');
  cardListBackBtn.textContent = '←';
-
+  listContainer.style.display ='none';
 
  cardListBackBtn.addEventListener('click', ()=>{
   categories.style.visibility='visible';
@@ -39,16 +42,17 @@ categories.style.marginBottom ='4rem'
 
   const filtered = bookmarks.filter(b => b.categoryId === categoryId);
   filtered.forEach(b => {
-    const card = document.createElement('div');
+    const card = document.createElement('ul');
     card.classList.add('list-card');
-    card.innerHTML = `
+    card.innerHTML = `<li>
       ${b.imageData ? `<img src="${b.imageData}" alt="${b.titleInput}" />` : ''}
-      <h3>${b.titleInput}</h3>
+      <h3>${b.titleInput}</h3> </li>
     `;
+
     card.addEventListener('click', () => {
       displayBookmarkDetails(b);
         const cardListContainer = document.querySelector('.card-list-container');
-        
+        listContainer.style.display ='grid';
       cardListContainer.style.display ='none'
     });
     cardListContainer.appendChild( card);
@@ -61,9 +65,11 @@ categories.style.marginBottom ='4rem'
     const newBookmarkButton = addNewBookmark(categoryId, onSave);
     newBookmarkButton.style.order = '999'; 
     cardListContainer.style.display = 'flex';
+      listContainer.style.display ='none';
     cardListContainer.style.flexDirection = 'column'; 
     cardListContainer.appendChild(newBookmarkButton);
     form.style.display = 'none';
+
 
     } else {
       // If no cards saved I want to show the form to create first bookmark
@@ -89,7 +95,7 @@ function displayBookmarkDetails(item) {
 const listContainer = document.querySelector('.lists-container');
 
   const cardListContainer = document.querySelector('.card-list-container');
-  
+
   lists.innerHTML = `
     <li>
     <p>  ℍ Title </p>
@@ -114,17 +120,12 @@ const listContainer = document.querySelector('.lists-container');
   lists.insertBefore(delBtn, lists.firstChild);
   
 
-
-
-
-
-
   const listBackBtn = document.createElement('button');
  listBackBtn .classList.add('back-btn');
 listBackBtn .textContent = '←';
 
 
- listBackBtn .addEventListener('click', ()=>{
+ listBackBtn.addEventListener('click', ()=>{
 
 
   container.style.display = 'none';
@@ -133,7 +134,7 @@ lists.style.display='none'
   cardListContainer.style.display ='flex'
 listBackBtn.style.display ='none';
 cardListContainer.style.marginTop = '5rem'
-
+  listContainer.style.display ='none';
   
  })
 

@@ -34,9 +34,18 @@
   const cancelBtn = document.createElement('button'); 
   cancelBtn.classList.add('cancel-btn');
   cancelBtn.textContent = 'Cancel';
+
+
+ const formBackBtn = document.createElement('button');
+ formBackBtn.classList.add('back-btn');
+ formBackBtn.textContent = '←';
+ formBackBtn.style.marginLeft = 0;
+
+
+
   
   btnContainer.append( cancelBtn, saveBtn);
-  form.append(titleInput, urlInput, imageFileInput, description, btnContainer);
+  form.append(formBackBtn,titleInput, urlInput, imageFileInput, description, btnContainer);
 
   saveBtn.addEventListener('click', () => {
     if (!titleInput.value.trim()) {
@@ -94,4 +103,13 @@
     categories.style.marginTop ='4rem'
   container.style.display='flex';
   });
+
+
+
+  formBackBtn.addEventListener('click', ()=>{
+    form.style.display = 'none';
+    categories.style.display = 'grid';
+    container.style.display ='flex';
+    categories.style.marginTop = '4rem';
+  })
 }

@@ -6,12 +6,15 @@ import { loadBookmarks, saveBookmark } from './components/Storage.js';
 
 const container = document.querySelector('.container');
 const wrapper = document.querySelector('.wrapper');
-
+const listsContainer = document.querySelector('.lists-container');
+const cardListContainer = document.querySelector('.card-list-container')
 let newBookmark = loadBookmarks(); 
-
+listsContainer.style.display ='none'
+cardListContainer.style.display ='none'
 function init() {
   renderSearchBar();
   renderCategoryList(onCategoryClick);
+
 }
 
 function onCategoryClick(categoryId) {
