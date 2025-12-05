@@ -18,8 +18,10 @@ searchInput.classList.add('search');
   const searchBtn = document.createElement('button');
   searchBtn.classList.add('search-btn');
   searchBtn.textContent ='Search';
+searchBtn.style.padding ='0.8rem'
+searchBtn.style.borderRadius='1rem'
 
-  searchbarContainer.append(searchBtn, searchInput);
+  searchbarContainer.append( searchInput, searchBtn);
   
   // everytime a user write something in the input, filter and show results
   searchInput.addEventListener('input',()=>{
@@ -30,6 +32,7 @@ searchInput.classList.add('search');
 
       if(!Array.isArray(all)|| all.length === 0){
       renderSearchedBookmarks([]);
+    
       return;
       
     }

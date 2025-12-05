@@ -5,7 +5,6 @@ export function loadBookmarks() {
 }
 
 
-
 // Save bookmark to localStorage so it  doesnt disappear when the user refresh the website
 export function saveBookmark(bookmark) {
   const bookmarks = loadBookmarks();
@@ -31,10 +30,23 @@ export function getBookmarksByCategory(categoryId, bookmarks) {
 
 export function renderSearchedBookmarks(bookmarks) {
   const wrapper = document.querySelector('.wrapper');
+      const item = document.createElement('div');
+    const searchResultContainer = document.createElement('div');
+    searchResultContainer.classList.add('result-container');
+    const searchTitle = document.createElement('p');
+    searchTitle.classList.add('search-title')
+searchTitle.textContent = `${bookmarks.length} found`
+
   wrapper.innerHTML = "";
 
+  const searchBackBtn = document.createElement('button');
+ searchBackBtn.classList.add('back-btn');
+searchBackBtn.textContent = '←';
+
+
   bookmarks.forEach(b => {
-    const item = document.createElement('div');
+
+  
     item.classList.add('bookmark-item');
     item.style.color = 'white'
 
@@ -43,16 +55,34 @@ export function renderSearchedBookmarks(bookmarks) {
     const url = b.urlInput || "";
 
     item.innerHTML=`
+  
     <a href=${url}> 
     <div class="search-result">
-    Category :  ${category} </p> 
-    <P>${title}</P>
+    <p class="category-title">Category: ${category}</p>
+    <P> Bookmark:  ${title}</P>
     </div>
     </a>
     <p> 
 
   `;
-
-    wrapper.appendChild(item);
+searchResultContainer.append("", item )
+    wrapper.appendChild( searchResultContainer);
   });
+
+ searchBackBtn.addEventListener('click', ()=>{
+
+  searchResultContainer.style.display = 'none';
+
+  const wrapper = document.querySelector('.wrapper');
+  wrapper.innerHTML = ''; 
+  location.reload(); 
+ })
+
+ wrapper.prepend(searchBackBtn);
+
+  searchResultContainer.insertBefore(searchTitle, searchResultContainer.firstChild);
+  wrapper.style.rowGap= "1rem"
+  wrapper.style.alignItems = 'flex-start'
+  wrapper.style.marginLeft = '1rem';
+
 }

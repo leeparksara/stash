@@ -116,6 +116,9 @@ const listContainer = document.querySelector('.lists-container');
     const refreshed = loadBookmarks();
     renderCardList(item.categoryId, refreshed, currentOnSave);
     lists.innerHTML = '';
+const exisitingBackBtn = listContainer.querySelector('.back-btn');
+if(exisitingBackBtn) exisitingBackBtn.remove();
+
   });
   lists.insertBefore(delBtn, lists.firstChild);
   

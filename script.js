@@ -1,4 +1,4 @@
-﻿import { renderSearchBar } from './components/SearchBar.js';
+﻿import { renderSearchBar } from './components/Searchbar.js';
 import { renderCategoryList } from './components/Category.js';
 //import { renderBookmarkForm } from './components/BookmarkForm.js';
 import { renderCardList } from './components/CardList.js';
