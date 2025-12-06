@@ -1,4 +1,4 @@
-import { renderBookmarkForm } from "./BookmarkForm";
+import { renderBookmarkForm } from "./bookmarkForm";
 
 export function addNewBookmark(categoryId, onSave){
 

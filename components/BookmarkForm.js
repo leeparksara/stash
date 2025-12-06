@@ -1,4 +1,5 @@
-﻿export function renderBookmarkForm(categoryId, onSave) {
+﻿import{showMessage} from './confirm'
+export function renderBookmarkForm(categoryId, onSave) {
   const form = document.getElementById('bookmark-form');
   const cardListContainer = document.querySelector('.card-list-container');
   const container = document.querySelector('.container');
@@ -48,6 +49,7 @@
   form.append(formBackBtn,titleInput, urlInput, imageFileInput, description, btnContainer);
 
   saveBtn.addEventListener('click', () => {
+
     if (!titleInput.value.trim()) {
       alert('Please fill the title');
       return;
@@ -91,9 +93,14 @@
         imageData: null
       });
       
+      
       form.style.display = 'none';
       cardListContainer.style.display = 'flex';
     }
+    
+    showMessage("✅ Bookmark Saved!", 3000);
+
+
   });
 
   cancelBtn.addEventListener('click', () => {

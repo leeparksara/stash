@@ -1,7 +1,7 @@
-import { addNewBookmark } from './NewBookmark.js';
-import { renderBookmarkForm } from './BookmarkForm.js';
-import { createDeleteButton } from './DeleteOneItem.js';
-import { deleteBookmark, loadBookmarks } from './Storage.js';
+import { addNewBookmark } from './newBookmark.js';
+import { renderBookmarkForm } from './bookmarkForm.js';
+import { createDeleteButton } from './deleteOneItem.js';
+import { deleteBookmark, loadBookmarks } from './storage.js';
 
 let currentOnSave = null;
 // Tracking current category for back button
@@ -54,6 +54,7 @@ categories.style.marginBottom ='4rem'
         const cardListContainer = document.querySelector('.card-list-container');
         listContainer.style.display ='grid';
       cardListContainer.style.display ='none'
+      
     });
     cardListContainer.appendChild( card);
   });

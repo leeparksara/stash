@@ -1,4 +1,4 @@
-import { loadBookmarks, renderSearchedBookmarks } from "./Storage";
+import { loadBookmarks, renderSearchedBookmarks } from "./storage";
 
 export function renderSearchBar(){
   const searchbarContainer = document.querySelector('.search-bar-container');
@@ -19,7 +19,7 @@ searchInput.classList.add('search');
   searchBtn.classList.add('search-btn');
   searchBtn.textContent ='⌕';
   
-searchBtn.style.fontSize ='2.8rem'
+searchBtn.style.fontSize ='44.8px'
 searchBtn.style.color ='#cacacaff'
 searchBtn.style.backgroundColor='transparent'
 searchBtn.style.border ='none'

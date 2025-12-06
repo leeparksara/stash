@@ -1,4 +1,4 @@
-import {displayBookmarkDetails} from './CardList'
+import {displayBookmarkDetails} from './cardList'
 
 // Load bookmarks from localStorage
 export function loadBookmarks() {
