@@ -220,19 +220,6 @@ border-radius: 16px;
   border-radius: 16px;
 }
 
-.add-btn{
-  font-size: 22.4px;
-  color: #fff;
-  padding: 19.2px ;
-  border: none;
-  width: 224px;
-  border-radius: 16px;
-  background-color:var(--color-add-btn);
-  margin-bottom: 80px;
-margin-top: 32px;
-
-}
-
 
 .back-btn, .cards-back-btn{
   width: 40px;
@@ -376,12 +363,39 @@ border-radius: 2rem;
   
 }
 
+
+.add-btn{
+  font-size: 22.4px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 16px;
+  background-color:var(--color-add-btn);
+  padding: 0.8rem 1.5rem 0.8rem 1.5rem ;
+}
+.buttons-container{
+  display: flex;
+  
+
+}
+.delete-all-btn {
+font-size: 22.4px;
+  color: #000;
+  border: none;
+cursor: pointer;
+  border-radius: 16px;
+  background-color:#f6d21d;
+  padding: 0.8rem 1.5rem 0.8rem 1.5rem ;
+}
+
+
 /* viewport on small screen*/
-@media screen and (max-width: 43.75rem) {
+@media screen and (max-width:700px) {
 
 .wrapper{
   display: flex;
   flex-direction: column;
+
 }
   
 .category-container{
@@ -459,8 +473,6 @@ border-radius: 32px;
   align-items: center;
   flex-direction: column;
   width: 85%;
-
-
 }
 .lists{
 justify-content:center;
@@ -480,7 +492,6 @@ cursor: pointer;
 
 .card-list-container{
   display: flex;
-
   width: 100%;
   margin: 0;
   

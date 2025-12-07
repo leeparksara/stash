@@ -1,7 +1,8 @@
 import { addNewBookmark } from './newBookmark.js';
 import { renderBookmarkForm } from './bookmarkForm.js';
 import { createDeleteButton } from './deleteOneItem.js';
-import { deleteBookmark, loadBookmarks } from './storage.js';
+import { deleteBookmark, loadBookmarks} from './storage.js';
+import {createDeleteAllButton} from './deleteAll.js'
 
 let currentOnSave = null;
 // Tracking current category for back button
@@ -61,14 +62,19 @@ categories.style.marginBottom ='4rem'
 
 
 
-  // Show New Bookmark button only if there saved cards 
+  // Show New Bookmark button , and delete all button . only if there saved cards 
   if (filtered.length > 0){
     const newBookmarkButton = addNewBookmark(categoryId, onSave);
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('buttons-container');
+
+    const deleteAllBtn= createDeleteAllButton();
     newBookmarkButton.style.order = '999'; 
     cardListContainer.style.display = 'flex';
       listContainer.style.display ='none';
     cardListContainer.style.flexDirection = 'column'; 
-    cardListContainer.appendChild(newBookmarkButton);
+    buttonsContainer.append(deleteAllBtn, newBookmarkButton)
+   wrapper.after(buttonsContainer);
     form.style.display = 'none';
 
 

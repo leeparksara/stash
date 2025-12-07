@@ -2,7 +2,9 @@
 import { renderCategoryList } from './components/Category.js';
 //import { renderBookmarkForm } from './components/BookmarkForm.js';
 import { renderCardList } from './components/cardList.js';
-import { loadBookmarks, saveBookmark } from './components/storage.js';
+import { loadBookmarks, saveBookmark} from './components/storage.js';
+import { createDeleteAllButton } from './components/deleteAll.js';
+
 
 const container = document.querySelector('.container');
 const wrapper = document.querySelector('.wrapper');
@@ -15,8 +17,12 @@ cardListContainer.style.display ='none'
 function init() {
   renderSearchBar();
   renderCategoryList(onCategoryClick);
+  
+
 
 }
+
+
 
 function onCategoryClick(categoryId) {
 

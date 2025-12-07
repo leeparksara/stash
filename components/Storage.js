@@ -21,6 +21,12 @@ export function deleteBookmark(title) {
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 }
 
+// Delete all the saved bookmarks
+
+export function deleteAllBookmarks(){
+  localStorage.removeItem('bookmarks')
+}
+
 // Get bookmarks by category
 export function getBookmarksByCategory(categoryId, bookmarks) {
   return bookmarks.filter(b => b.categoryId === categoryId);
