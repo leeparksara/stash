@@ -2,7 +2,7 @@
 export function createDeleteButton(title, onDelete) {
   const deleteBtn = document.createElement('button');
   deleteBtn.classList.add('delete-btn');
-  deleteBtn.textContent = 'Delete';
+  deleteBtn.textContent = '🗑️';
   deleteBtn.addEventListener('click', () => onDelete(title));
 
 

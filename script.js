@@ -9,15 +9,14 @@ import { loadBookmarks, saveBookmark} from './components/storage.js';
 const container = document.querySelector('.container');
 const wrapper = document.querySelector('.wrapper');
 const listsContainer = document.querySelector('.lists-container');
-const cardListContainer = document.querySelector('.card-list-container')
+const cardListContainer = document.querySelector('.card-list-container');
+
 
 listsContainer.style.display ='none'
 cardListContainer.style.display ='none'
 function init() {
   renderSearchBar();
   renderCategoryList(onCategoryClick);
-  
-
 
 }
 
@@ -46,7 +45,7 @@ export function onCategoryClick(categoryId) {
 }
 
 function onBookmarkSave(bookmark) {
-  // Save to storage and re-render from storage to keep source of truth
+  
   const existing = loadBookmarks();
   existing.push(bookmark);
   localStorage.setItem('bookmarks', JSON.stringify(existing));

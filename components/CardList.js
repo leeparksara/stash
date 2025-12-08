@@ -66,7 +66,7 @@ categories.style.marginBottom ='4rem'
   if (filtered.length > 0){
     
     const buttonsContainer = document.createElement('div');
-    buttonsContainer.classList.add('button-container');
+    buttonsContainer.classList.add('buttons-container');
 
   
     const deleteAllBtn = createDeleteAllButton(categoryId, currentOnSave);

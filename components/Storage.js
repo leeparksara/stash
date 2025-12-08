@@ -50,7 +50,7 @@ searchTitle.textContent = `${bookmarks.length} found`
   const searchBackBtn = document.createElement('button');
  searchBackBtn.classList.add('back-btn');
 searchBackBtn.textContent = '←';
-searchBackBtn.style.marginTop ='10px'
+searchBackBtn.style.marginTop ='20px'
 searchBackBtn.style.marginBottom ='10px'
 
   bookmarks.forEach(b => {

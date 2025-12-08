@@ -20,7 +20,9 @@ export function createDeleteAllButton(categoryId, onSave) {
 
 
       const refreshed = loadBookmarks();
-      renderCardList(categoryId, refreshed, onSave);
+      cardListContainer.style.display ='none'
+    
+      renderBookmarkForm(categoryId, refreshed, onSave)
     });
 
     
