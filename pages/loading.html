@@ -3,6 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const getStartedButton = document.getElementById('start-btn');
+
+    if (getStartedButton) {
+        getStartedButton.addEventListener('click', () => {
+            
+            sessionStorage.setItem('loaded', 'true'); 
+
+      
+            window.location.href = '/index.html'; 
+        });
+    }
+});
+</script>
   <title>Loading page</title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
