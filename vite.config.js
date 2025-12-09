@@ -1,11 +1,9 @@
-
 import { defineConfig } from 'vite';
 
 export default defineConfig({
 
-  
+
   server: {
-  
     open: '/pages/loading.html' 
   },
   
@@ -13,7 +11,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        loading: '/pages/loading.html',
+      
+        loading: 'pages/loading.html', 
+        
         main: 'index.html',
       }
     }
