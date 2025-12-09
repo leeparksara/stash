@@ -1,5 +1,5 @@
 ﻿
-import { renderSearchBar } from './components/Searchbar.js';
+import { renderSearchBar } from './components/searchbar.js';
 import { renderCardList } from './components/cardList.js';
 import { loadBookmarks , saveBookmark} from './components/storage.js';
 
