@@ -1,8 +1,7 @@
 ﻿
-import { renderSearchBar } from './components/Searchbar.js';
-import { renderCategoryList } from './components/Category.js';
-
-import { renderCardList } from './components/CardList.js';
+import { renderSearchBar } from './components/searchbar.js';
+import { renderCategoryList} from './components/category.js'
+import { renderCardList } from './components/cardList.js';
 import { loadBookmarks , saveBookmark} from './components/storage.js';
 
 
