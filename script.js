@@ -1,8 +1,9 @@
-﻿import { renderSearchBar } from './components/searchbar/';
-import { renderCategoryList} from './components/category/'
-import { renderCardList } from './components/cardList/';
-import { loadBookmarks , saveBookmark} from './components/storage.js';
+﻿
+import { renderSearchBar } from './components/Searchbar.js';
+import { renderCardList } from './components/cardList.js';
 
+import { renderCardList } from './components/cardList.js'; 
+import { loadBookmarks , saveBookmark} from './components/storage.js';
 
 const container = document.querySelector('.container');
 const wrapper = document.querySelector('.wrapper');
